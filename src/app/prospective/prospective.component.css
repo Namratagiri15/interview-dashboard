@@ -1,0 +1,84 @@
+.prospective-row {
+    background-color: white;
+    padding: 14px;
+    border: 1px solid gray;
+    margin: 10px 0;
+}
+
+.profile-image {
+    border-radius: 50%;
+    height: 90px;
+}
+
+.p-img-wrapper {
+    text-align: center;
+}
+
+.comment {
+    border-left: 1px solid gray;
+    margin: auto 0 auto 50px;
+    padding-left: 26px;
+}
+
+.leads {
+  text-align: center;
+}
+
+.captured {
+    text-align: center;
+}
+
+.dislike {
+    width: 36px;
+    cursor: pointer;
+}
+
+.like {
+    width: 45px;
+    cursor: pointer;
+}
+
+.schedule a {
+  text-decoration: none;
+}
+
+.schedule,
+.leads,
+.captured,
+.waiting,
+.like-icon,
+.dislike-icon {
+    margin: auto;
+}
+
+h5 {
+    text-align: center;
+}
+
+.menu-btn {
+  border: none;
+  background: none;
+}
+
+.menu {
+    height: 30px;
+    margin: auto;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+  right: 0;
+}
+
+.cdk-drag-preview {
+    border: 2px solid #1a73e8;
+}
+
+.cdk-drag-placeholder {
+    opacity: 0;
+}
+
+.handler img {
+    height: 17%;
+    cursor: grab;
+}

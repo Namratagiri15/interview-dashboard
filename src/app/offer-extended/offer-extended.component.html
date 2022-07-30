@@ -1,0 +1,37 @@
+<h2>Offer Extended</h2>
+<h5 *ngIf="hiredCandidates.length == 0"><i>No data found</i></h5>
+<section class="hired row" *ngFor="let candidate of hiredCandidates; let i=index">
+    <div class="candidate col-4 row">
+        <div class="col-6 p-img-wrapper">
+            <img class="profile-image" src="{{candidate.profile_photo}}">
+        </div>
+        <div class="col-6">
+            <p><strong>{{candidate.name}}</strong></p>
+            <p>{{candidate.role}}</p>
+            <p>{{candidate.location}}</p>
+        </div>
+    </div>
+    <div class="col-6 row">
+        <div class="col-4">
+            <p><strong>Offer Accepted</strong></p>
+            <p>10th July 2022</p>
+        </div>
+        <div class="col-4">
+            <p><strong>Date of Joining</strong></p>
+            <p>20th Aug 2022</p>
+        </div>
+        <div class="col-4">
+            <p><strong>Joining status</strong></p>
+            <select class="" aria-label="Default select example">
+                <option value="1" selected> Yes
+                </option>
+                <option value="2">no
+                </option>
+                <option value="3">pending</option>
+              </select>
+           
+        </div>
+    </div>
+    <div class="col-2 comment">{{candidate.comment}}</div>
+
+</section>

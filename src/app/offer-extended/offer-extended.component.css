@@ -1,0 +1,40 @@
+.hired {
+    background-color: white;
+    padding: 14px;
+    border: 1px solid gray;
+    margin: 10px 0;
+}
+
+.profile-image {
+    border-radius: 50%;
+    height: 90px;
+}
+
+.p-img-wrapper {
+    text-align: center;
+}
+
+.comment {
+    border-left: 1px solid gray;
+    margin: auto 0 auto 33px;
+    padding-left: 26px;
+}
+
+.leads {
+  text-align: center;
+}
+
+.captured {
+    text-align: center;
+}
+
+.reject {
+  color: red;
+}
+
+.reschedule,
+.reject,
+.leads,
+.captured {
+    margin: auto;
+}

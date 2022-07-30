@@ -1,0 +1,74 @@
+<h2>Prospective</h2>
+<h5 *ngIf="candidateDetails.length == 0"><i>No data found</i></h5>
+<section class="prospective row" *ngIf="candidateDetails.length != 0">
+    <div class="col-4 row">
+        <h5>{{'candidate details' | uppercase}}</h5>
+    </div>
+    <div class="col-4">
+        <h5>{{'interview schedule' | uppercase}}</h5>
+    </div>
+    <div class="col-2 row">
+        <h5>{{ 'reference check' | uppercase}}</h5>
+        <span class="col-6">leads</span>
+        <span class="col-6">captured</span>
+    </div>
+    <div class="col-2">
+        <h5>{{ 'Comment' | uppercase}}</h5>
+    </div>
+</section>
+<section class="prospective row list-wrapper" cdkDropList (cdkDropListDropped)="onDrop($event)"
+    [cdkDropListData]="candidateDetails">
+    <div cdkDrag cdkDragLockAxis="y" cdkDragBoundary=".list-wrapper" class="prospective-row row"
+        *ngFor="let candidate of candidateDetails; let i=index" #candidate>
+
+        <div class="candidate col-4 row">
+            <div cdkDragHandler class="handler col-1">
+                <img src="../../assets/Icons/dragger.png">
+            </div>
+            <div class="col-5 p-img-wrapper">
+                <img class="profile-image" src="{{candidate.profile_photo}}">
+            </div>
+            <div class="col-6">
+                <p><strong>{{candidate.name}}</strong></p>
+                <p>{{candidate.role}}</p>
+                <p>{{candidate.location}}</p>
+            </div>
+        </div>
+        <div class="col-4 row">
+            <span (click)="onHire(i)" class="col-3 like-icon">
+                <img class="like" src="../../assets/Icons/Like&Dislike/Like/FilledPositive.png">
+                <br><span>Hire</span>
+            </span>
+            <span class="col-3 waiting">
+                Awaiting Feedback
+            </span>
+            <span class="col-3 dislike-icon" (click)="onDropped(i)">
+                <img class="dislike" src="../../assets/Icons/Like&Dislike/Dislike/FilledNegative.png">
+                <br><span>Reject</span>
+            </span>
+            <span class="col-3 schedule">
+                <a href="https://calendar.google.com/" target="_blank" rel="noopener noreferral">
+                <img class="dislike" src="../../assets/Icons/calander.png">
+                <br><span>Schedule</span>
+            </a>
+            </span>
+        </div>
+        <div class="col-2 row">
+            <span class="col-6 leads">{{candidate.reference.leads}}</span>
+            <span class="col-6 captured">{{candidate.reference.captured}}</span>
+        </div>
+        <div class="col-2 row comment">
+            <p class="col-9">{{candidate.comment}}</p>
+            <div class="col-2 dropdown">
+                <button class="menu-btn" (click)="ToggleDropdown(dropdown)">
+                    <img class="menu" src="../../assets/Icons/Group.jpg">
+                </button>
+                <ul class="dropdown-menu" #dropdown>
+                    <li><a class="dropdown-item" [routerLink]="['edit', candidate.id]"
+                        >Edit Comment</a></li>
+                    <li><a class="dropdown-item" (click)="hideCandidate(i, candidate)">Hide Candidate</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

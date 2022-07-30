@@ -1,0 +1,24 @@
+<h2>Dropped Candidates</h2>
+<h5 *ngIf="Rejected.length == 0"><i>No data found</i></h5>
+<section class="dropped row" *ngFor="let candidate of Rejected; let i=index">
+    <div class="candidate col-4 row">
+        <div class="col-6 p-img-wrapper">
+            <img class="profile-image" src="{{candidate.profile_photo}}">
+        </div>
+        <div class="col-6">
+            <p><strong>{{candidate.name}} - {{candidate.id}}</strong></p>
+            <p>{{candidate.role}}</p>
+            <p>{{candidate.location}}</p>
+        </div>
+    </div>
+    <div class="col-4 row">
+        <span class="col-6 reject">Rejected</span>
+        <span class="col-6 reschedule" (click)="onReschedule(i)">Reschedule</span>
+    </div>
+    <div class="col-2 row">
+        <span class="col-6 leads">{{candidate.reference.leads}}</span>
+        <span class="col-6 captured">{{candidate.reference.captured}}</span>
+    </div>
+    <div class="col-2 comment">{{candidate.comment}}</div>
+
+</section>
