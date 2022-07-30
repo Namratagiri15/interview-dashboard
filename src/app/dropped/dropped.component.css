@@ -32,9 +32,13 @@
   color: red;
 }
 
-.reschedule,
+.reevaluate,
 .reject,
 .leads,
 .captured {
     margin: auto;
+}
+
+.reevaluate {
+  cursor: pointer;
 }

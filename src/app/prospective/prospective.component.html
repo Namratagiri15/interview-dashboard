@@ -16,7 +16,7 @@
         <h5>{{ 'Comment' | uppercase}}</h5>
     </div>
 </section>
-<section class="prospective row list-wrapper" cdkDropList (cdkDropListDropped)="onDrop($event)"
+<section class="row list-wrapper" cdkDropList (cdkDropListDropped)="onDrop($event)"
     [cdkDropListData]="candidateDetails">
     <div cdkDrag cdkDragLockAxis="y" cdkDragBoundary=".list-wrapper" class="prospective-row row"
         *ngFor="let candidate of candidateDetails; let i=index" #candidate>
